@@ -3,7 +3,7 @@ package L02_Multidimensional_Arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class P00_01_Methods_For_Multidimensioma_Arraysl {
+public class P00_01_Methods_For_Multidimensional_Arraysl {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
