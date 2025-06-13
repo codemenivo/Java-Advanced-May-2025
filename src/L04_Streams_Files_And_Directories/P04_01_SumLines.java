@@ -30,6 +30,7 @@ public class P04_01_SumLines {
 
         }
 
+        reader.close();
         
     }
 }

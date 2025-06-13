@@ -27,5 +27,7 @@ public class P04_02_SumBytes {
 
         System.out.println(sum);
 
+        reader.close();
+
     }
 }
