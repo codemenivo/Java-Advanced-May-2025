@@ -1,7 +1,10 @@
 02. Throne Conquering
 
 Paris has entered Sparta and he has to fight to abduct the wife of Menelaus, Helen.
-After Paris got into Sparta, he has to fight his way to Helen’s chamber. To do that, he has to walk through the city where dangerous enemies are watching out for threats, but he also has to be careful not to get exhausted and not be able to proceed with his mission. If Paris successfully reaches her chamber, they safely escape from the Spartans.
+After Paris got into Sparta, he has to fight his way to Helen’s chamber. 
+To do that, he has to walk through the city where dangerous enemies are watching out for threats, 
+but he also has to be careful not to get exhausted and not be able to proceed with his mission. 
+If Paris successfully reaches her chamber, they safely escape from the Spartans.
 
 -  Empty space
 Each turn proceeds as follows:
