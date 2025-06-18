@@ -30,5 +30,13 @@ public class P05_07_FindTheSmallestElement {
         };
         printIndex.accept(index);
 
+        //начин 2:
+       /*
+            Consumer<List<Integer>> printLastIndexOfMinElement =
+                list -> System.out.println(list.lastIndexOf(Collections.min(list)));
+            printLastIndexOfMinElement.accept(numbers);
+
+        */
+
     }
 }
