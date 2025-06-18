@@ -18,7 +18,31 @@ public class P05_04_AppliedArithmetic {
         String command = scanner.nextLine();
 
         while (!"end".equals(command)){
-            switch (command){
+
+            Function<Integer, Integer> operation = null;
+            if (command.equals("add")) {
+                operation = number -> number + 1;
+
+            } else if (command.equals("multiply")) {
+                operation = number -> number * 2;
+            } else if (command.equals("subtract")) {
+                operation = number -> number - 1;
+            } else if (command.equals("print")) {
+                Consumer<List<Integer>> printnumbers = list -> {
+                    for (Integer number : list) {
+                        System.out.print(number + " ");
+                    }
+                };
+                printnumbers.accept(numbers);
+                System.out.println();
+            }
+            if (operation != null) {
+                numbers = numbers.stream().map(operation).collect(Collectors.toList());
+            }
+
+
+
+            /*switch (command){
                 case "add":
                     Function<List<Integer>, List<Integer>> increaseNumbersInList = list -> list.stream()
                             .map(number -> number += 1).collect(Collectors.toList());
@@ -43,7 +67,7 @@ public class P05_04_AppliedArithmetic {
                     printNumbers.accept(numbers);
                     System.out.println();
                     break;
-            }
+            } */
 
 
             command = scanner.nextLine();
