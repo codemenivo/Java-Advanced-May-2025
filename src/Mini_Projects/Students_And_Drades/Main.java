@@ -31,37 +31,61 @@ public class Main {
         // 1. Извеждане на отличницити с успех >= 5.50 && успех <= 6.00
         List<Student> excellentStudents = createExcelantStudentsList(studentsList);
 
-        printExcelantStudentList(excellentStudents);
+        printStudentList(" Отличници : ", excellentStudents);
 
         // 2. Имена на ученици с успех под 4.00 (оценка >= 3.00 && оценка < 4.00) и името да започва с главна буква
 
         List<Student> lowGradeStudent = createLowGradeStudentsList(studentsList);
-        printLowGradeStudentsList(lowGradeStudent);
+        printStudentList(" Ученици с успех под 4.00 : ", lowGradeStudent);
 
         // 3. Имена на ученици със среден успех (оценка >= 4.00 && оценка < 5.50)
 
         List<Student> middleGradeStudent = createMiddleGradeStudentList(studentsList);
-        printMiddleGradeStudentList(middleGradeStudent);
+        printStudentList(" Ученици с упех от 4.00 до 5.50 : ", middleGradeStudent);
 
         // 4. Имена на ученици със слаби оценки (оценка >= 2.00 && оценка < 3.00)
 
         List<Student> poorGradeStudent = createPoorGradeStudentsList(studentsList);
-        printPoorGradeStudentsList(poorGradeStudent);
+        printStudentList(" Ученици със слаби оценки : ", poorGradeStudent);
 
         // 5. Имена на ученици със сгрешени оценки (оценка < 2.00 && оценка > 6.00)
 
         List<Student> wrongGradeStudent = createWrongGradeStudentsList(studentsList);
-        printWrongGradeStudentsList(wrongGradeStudent);
+        printStudentList(" Списък на ученици със сгрешени оценки : ", wrongGradeStudent);
+
+
+        // 6. Среден успех на класа
+
+        double averageGrade = calculateAverageClassGrade(studentsList);
+        System.out.printf("Средният успех на класа е: %.2f%n", averageGrade);
+
+        // 7. Списък на учениците с упех 6.00, сортиран по азбучен ред.
+
+        List<Student> topStudents = createTopStudentsList(studentsList);
+        printStudentList(" Списък на ученици с успех 6.00: ", topStudents);
 
     }
 
-    private static void printWrongGradeStudentsList(List<Student> wrongGradeStudent) {
-        System.out.println(" Списък на ученици със сгрешени оценки : ");
-        for (Student student : wrongGradeStudent) {
-           String name = capitalizeFirstLetter(student.getName());
-            System.out.println(name + " - " + student.getGrade());
+
+
+    private static List<Student> createTopStudentsList(List<Student> studentsList) {
+
+        return studentsList.stream().filter(topStudent -> topStudent.getGrade() == 6.00)
+                .sorted(Comparator.comparing(Student::getName)).toList();
+    }
+
+    private static double calculateAverageClassGrade(List<Student> studentsList) {
+        double averageResult = 0.0;
+        for (Student student : studentsList) {
+            averageResult += student.getGrade();
         }
+        averageResult = averageResult / studentsList.size();
+
+        return averageResult;
     }
+
+
+
 
     private static List<Student> createWrongGradeStudentsList(List<Student> studentsList) {
         return studentsList.stream()
@@ -69,13 +93,7 @@ public class Main {
                 .sorted(Comparator.comparing(Student::getGrade).reversed()).toList();
     }
 
-    private static void printPoorGradeStudentsList(List<Student> poorGradeStudent) {
-        System.out.println(" Ученици със слаби оценки : ");
-        for (Student student : poorGradeStudent) {
-            String name = capitalizeFirstLetter(student.getName());
-            System.out.println(name + " - " + student.getGrade());
-        }
-    }
+
 
     private static List<Student> createPoorGradeStudentsList(List<Student> studentsList) {
         return studentsList.stream()
@@ -83,14 +101,6 @@ public class Main {
                 .sorted(Comparator.comparing(Student::getGrade).reversed()).toList();
     }
 
-    private static void printMiddleGradeStudentList(List<Student> middleGradeStudent) {
-        System.out.println(" Ученици с упех от 4.00 до 5.50 : ");
-        for (Student student : middleGradeStudent) {
-           String name = capitalizeFirstLetter(student.getName());
-            System.out.println(name + " - " + student.getGrade());
-
-        }
-    }
 
 
 
@@ -100,9 +110,9 @@ public class Main {
                 .sorted(Comparator.comparing(Student::getGrade).reversed()).toList();
     }
 
-    private static void printLowGradeStudentsList(List<Student> lowGradeStudent) {
-        System.out.println(" Ученици с успех под 4.00 : ");
-        for (Student student : lowGradeStudent) {
+    private static void printStudentList(String title, List<Student> list) {
+        System.out.println(title);
+        for (Student student : list) {
             String name = capitalizeFirstLetter(student.getName());
             System.out.println(name + " - " + student.getGrade());
 
@@ -116,16 +126,10 @@ public class Main {
     private static List<Student> createLowGradeStudentsList(List<Student> studentsList) {
         return studentsList.stream()
                 .filter(lowGrade -> lowGrade.getGrade() < 4.00 && lowGrade.getGrade() >= 3.00)
-                .sorted(Comparator.comparing(Student::getName)).sorted(Comparator.comparing(Student::getGrade).reversed()).toList();
+                .sorted(Comparator.comparing(Student::getName))
+                .sorted(Comparator.comparing(Student::getGrade).reversed()).toList();
     }
 
-    private static void printExcelantStudentList(List<Student> excellentStudents) {
-        System.out.println(" Отличници : ");
-        for (Student student : excellentStudents) {
-            String name = capitalizeFirstLetter(student.getName());
-            System.out.println(name + " - " + student.getGrade());
-        }
-    }
 
     private static List<Student> createExcelantStudentsList(List<Student> studentsList) {
 
