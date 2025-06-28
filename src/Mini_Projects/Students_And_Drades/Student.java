@@ -21,7 +21,9 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
+    public void setGrade(double grade) {
+        this.grade = grade;
+    }
 
 
 
