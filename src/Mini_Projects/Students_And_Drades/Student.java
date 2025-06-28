@@ -22,9 +22,7 @@ public class Student {
         this.name = name;
     }
 
-    public void setGrade(double grade) {
-        this.grade = grade;
-    }
+
 
 
     @Override

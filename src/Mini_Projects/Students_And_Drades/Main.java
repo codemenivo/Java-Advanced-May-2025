@@ -51,7 +51,7 @@ public class Main {
         // 5. Имена на ученици със сгрешени оценки (оценка < 2.00 && оценка > 6.00)
 
         List<Student> wrongGradeStudent = createWrongGradeStudentsList(studentsList);
-
+        printWrongGradeStudentsList(wrongGradeStudent);
 
     }
 
