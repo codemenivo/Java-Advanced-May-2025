@@ -126,8 +126,8 @@ public class Main {
     private static List<Student> createLowGradeStudentsList(List<Student> studentsList) {
         return studentsList.stream()
                 .filter(lowGrade -> lowGrade.getGrade() < 4.00 && lowGrade.getGrade() >= 3.00)
-                .sorted(Comparator.comparing(Student::getName))
-                .sorted(Comparator.comparing(Student::getGrade).reversed()).toList();
+                .sorted(Comparator.comparing(Student::getGrade).reversed().thenComparing(Student::getName))
+                .toList();
     }
 
 
