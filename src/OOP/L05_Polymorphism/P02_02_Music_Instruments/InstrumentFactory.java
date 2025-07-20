@@ -11,8 +11,8 @@ public class InstrumentFactory {
                 return new Drum();
             case "Piano" :
                 return new Piano();
-            case "Bass_Guitar" :
-                return new Bass_Guitar();
+            case "BassGuitar" :
+                return new BassGuitar();
             case "Trumpet" :
                 return new Trumpet();
             default:
