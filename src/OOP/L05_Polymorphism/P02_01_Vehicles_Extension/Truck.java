@@ -1,4 +1,4 @@
-package OOP.L05_Polymorphism.P02_Vehicles_Extension;
+package OOP.L05_Polymorphism.P02_01_Vehicles_Extension;
 
 public class Truck extends Vehicle {
 
