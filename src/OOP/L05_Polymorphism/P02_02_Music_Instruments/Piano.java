@@ -2,6 +2,11 @@ package OOP.L05_Polymorphism.P02_02_Music_Instruments;
 
 public class Piano extends Instrument {
 
+
+    public Piano() {
+        super("Piano", "Клавирен", "Пианото има клавиши и педали");
+    }
+
     @Override
     public String play() {
         //System.out.println("Piano is playing a melody.");

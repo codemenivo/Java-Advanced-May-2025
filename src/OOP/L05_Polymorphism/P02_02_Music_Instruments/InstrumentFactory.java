@@ -16,7 +16,7 @@ public class InstrumentFactory {
             case "Trumpet" :
                 return new Trumpet();
             default:
-                return new Instrument();
+                return null;
         }
 
 

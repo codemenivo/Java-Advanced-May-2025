@@ -2,6 +2,11 @@ package OOP.L05_Polymorphism.P02_02_Music_Instruments;
 
 public class Drum extends Instrument {
 
+
+    public Drum() {
+        super("Drum", "Ударни инструменти", "Барабана задава ритъма на мелодията");
+    }
+
     @Override
     public String play() {
         //System.out.println("Drum is beating.");
