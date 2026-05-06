@@ -9,7 +9,7 @@ public class Demo_03_01_Browser_History7 {
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine();
-        ArrayDeque<String > stack = new ArrayDeque<String>();
+        ArrayDeque<String > stack = new ArrayDeque<>();
 
         while (!"Home".equals(input)){
             if ("back".equals(input)){
