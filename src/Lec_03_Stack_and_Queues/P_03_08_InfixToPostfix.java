@@ -3,7 +3,7 @@ package Lec_03_Stack_and_Queues;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
-public class P_05_08_InfixToPostfix {
+public class P_03_08_InfixToPostfix {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
